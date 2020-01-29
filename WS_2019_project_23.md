@@ -25,11 +25,13 @@ After a quick google search I found a link to request my personal data according
 - Step 2 is to wait for the compiling to finish which can take up to 30 days (for me it took 14 days on my first request and 12 days on my second request when I wanted updated data for this project).
 - Step 3 is enabled when the data is ready to download. I received an email and simply had to click their download link.
 During the whole process I could not decide which data I wanted, but apparently, they just give you everything they have. This also includes subscriptions, playlists, interactions with other users and most importantly a list of all the music tracks I listened to. All the data was stored in different JSON files.
+
 Since only the music track list is relevant for us, I will just describe this data. There was a total of 2021 songs listed (according to the Spotify homepage this includes just the songs I listened to in the last 90 days, because they delete this personal data afterwards). The songs have a “endTime” vari-able (the date and time when I stopped playing them, exact to the minute), an “artistName”, a “trackName” of course and “msPLayed” (the time I played this song in milliseconds).
 The data was very clean and did not need that much processing, but I removed all song with less than 10.000 milliseconds (10 seconds) played, because this were just songs that I skipped over and did not listen to. There are also hardly any words spoken in the first ten seconds which could influ-ence my Google searches. This reduced the total amounts of songs to 1.556.
 
 #### Lyrics Data:
 To connect the song lyrics to our Google searches we needed a data set which has as many lyrics as possible. After some research I found a dataset on Kaggle which included more than 55.000 songs with their respective lyrics. Since this does not include any personal data it was much easier to ob-tain this dataset. I could simply download the data which was stored as an CSV file and inspect it.
+
 The exact number of songs is 57.650 and the dataset contains the name of the artist, the song names, a link to a webpage to listen to the song (YouTube, Vimeo, etc.) and unmodified lyrics of the song. The dataset was originally created by scraping the content from a webpage called “Lyrics-Freak”, Thankfully this was already done for our convenience which saved a lot of time.
 While processing extremely short and extremely long lyrics were removed as well as lyrics with non-ASCII symbols.
 
