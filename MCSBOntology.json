@@ -1,0 +1,503 @@
+{
+  "_comment": "Created with OWL2VOWL (version 0.3.7), http://vowl.visualdataweb.org [Additional Information added by WebVOWL Exporter Version: 1.1.7]",
+  "header": {
+    "languages": [
+      "undefined",
+      "en"
+    ],
+    "baseIris": [
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns",
+      "http://www.w3.org/2000/01/rdf-schema",
+      "http://www.w3.org/2001/XMLSchema",
+      "http://visualdataweb.org/MCSBAOntology"
+    ],
+    "prefixList": {
+      "owl": "http://www.w3.org/2002/07/owl#",
+      "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+      "wot": "http://xmlns.com/wot/0.1/",
+      "xsd": "http://www.w3.org/2001/XMLSchema#",
+      "": "http://visualdataweb.org/MCSBAOntology/",
+      "dc": "http://purl.org/dc/elements/1.1/",
+      "xml": "http://www.w3.org/XML/1998/namespace",
+      "vs": "http://www.w3.org/2003/06/sw-vocab-status/ns#",
+      "foaf": "http://xmlns.com/foaf/0.1/",
+      "rdfs": "http://www.w3.org/2000/01/rdf-schema#"
+    },
+    "title": "MCSBOntology",
+    "iri": "http://visualdataweb.org/MCSBOntology/",
+    "version": "1.0",
+    "author": "Markus Berger, Markus Sieder",
+    "description": {
+      "en": "Music Consumption and Search Behaviors Analysis\n-Ontology"
+    },
+    "other": {
+      "creator": [
+        {
+          "identifier": "creator",
+          "language": "undefined",
+          "value": "Markus Berger, Markus Sieder",
+          "type": "label"
+        }
+      ],
+      "versionInfo": [
+        {
+          "identifier": "versionInfo",
+          "language": "en",
+          "value": "1.0",
+          "type": "label"
+        }
+      ],
+      "title": [
+        {
+          "identifier": "title",
+          "language": "en",
+          "value": "MCSBOntology",
+          "type": "label"
+        }
+      ]
+    }
+  },
+  "namespace": [],
+  "settings": {
+    "global": {
+      "zoom": "0.93",
+      "translation": [
+        -121.84,
+        300.98
+      ],
+      "paused": false
+    },
+    "gravity": {
+      "classDistance": 200,
+      "datatypeDistance": 120
+    },
+    "filter": {
+      "checkBox": [
+        {
+          "id": "datatypeFilterCheckbox",
+          "checked": false
+        },
+        {
+          "id": "objectPropertyFilterCheckbox",
+          "checked": false
+        },
+        {
+          "id": "subclassFilterCheckbox",
+          "checked": false
+        },
+        {
+          "id": "disjointFilterCheckbox",
+          "checked": true
+        },
+        {
+          "id": "setoperatorFilterCheckbox",
+          "checked": false
+        }
+      ],
+      "degreeSliderValue": "0"
+    },
+    "modes": {
+      "checkBox": [
+        {
+          "id": "pickandpinModuleCheckbox",
+          "checked": false
+        },
+        {
+          "id": "nodescalingModuleCheckbox",
+          "checked": true
+        },
+        {
+          "id": "compactnotationModuleCheckbox",
+          "checked": false
+        },
+        {
+          "id": "colorexternalsModuleCheckbox",
+          "checked": true
+        }
+      ],
+      "colorSwitchState": false
+    }
+  },
+  "class": [
+    {
+      "id": "0",
+      "type": "owl:Class"
+    },
+    {
+      "id": "NodeId2",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "Class4",
+      "type": "owl:Class"
+    },
+    {
+      "id": "Class5",
+      "type": "owl:Class"
+    },
+    {
+      "id": "NodeId6",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "Class8",
+      "type": "owl:Class"
+    },
+    {
+      "id": "NodeId9",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "Class10",
+      "type": "owl:Class"
+    },
+    {
+      "id": "NodeId11",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "Class12",
+      "type": "owl:Thing"
+    },
+    {
+      "id": "NodeId13",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "Class14",
+      "type": "owl:Thing"
+    }
+  ],
+  "classAttribute": [
+    {
+      "id": "0",
+      "iri": "http://visualdataweb.org/MCSBAOntology/Song",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology",
+      "label": {
+        "IRI-based": "Song",
+        "en": "Song"
+      },
+      "pos": [
+        678.64,
+        242.72
+      ]
+    },
+    {
+      "id": "NodeId2",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema#",
+      "label": "string",
+      "attributes": [
+        "datatype"
+      ],
+      "pos": [
+        582.2,
+        15.12
+      ]
+    },
+    {
+      "id": "Class4",
+      "iri": "http://visualdataweb.org/MCSBAOntology/User",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "User",
+      "pos": [
+        761.88,
+        598.24
+      ]
+    },
+    {
+      "id": "Class5",
+      "iri": "http://visualdataweb.org/MCSBOntology/Artist",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "Artist",
+      "pos": [
+        320.19,
+        244.05
+      ]
+    },
+    {
+      "id": "NodeId6",
+      "iri": "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "baseIri": "http://www.w3.org/2001/XMLSchema#",
+      "label": "string",
+      "attributes": [
+        "datatype"
+      ],
+      "pos": [
+        138.75,
+        392.1
+      ]
+    },
+    {
+      "id": "Class8",
+      "iri": "http://visualdataweb.org/MCSBAOntology/Lyrics",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "Lyrics",
+      "pos": [
+        1033.06,
+        151.21
+      ]
+    },
+    {
+      "id": "NodeId9",
+      "iri": "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "baseIri": "http://www.w3.org/2001/XMLSchema#",
+      "label": "string",
+      "attributes": [
+        "datatype"
+      ],
+      "pos": [
+        1080.94,
+        -81.97
+      ]
+    },
+    {
+      "id": "Class10",
+      "iri": "http://visualdataweb.org/MCSBAOntology/Search",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "Search",
+      "pos": [
+        932.48,
+        913.19
+      ]
+    },
+    {
+      "id": "NodeId11",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema#",
+      "label": "string",
+      "attributes": [
+        "datatype"
+      ],
+      "pos": [
+        777.51,
+        1093.66
+      ]
+    },
+    {
+      "id": "Class12",
+      "iri": "http://visualdataweb.org/MCSBAOntology/Class12",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "Thing",
+      "pos": [
+        1305.91,
+        335.69
+      ]
+    },
+    {
+      "id": "NodeId13",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema#",
+      "label": "string",
+      "attributes": [
+        "datatype"
+      ],
+      "pos": [
+        553.41,
+        721.26
+      ]
+    },
+    {
+      "id": "Class14",
+      "iri": "http://visualdataweb.org/MCSBAOntology/Class14",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "Thing",
+      "pos": [
+        1247.46,
+        826.06
+      ]
+    }
+  ],
+  "property": [
+    {
+      "id": "datatypeProperty1",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "datatypeProperty2",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "objectProperty3",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "datatypeProperty4",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "objectProperty5",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "objectProperty6",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "objectProperty7",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "datatypeProperty8",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "objectProperty10",
+      "type": "owl:ObjectProperty"
+    },
+    {
+      "id": "datatypeProperty12",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "objectProperty13",
+      "type": "owl:ObjectProperty"
+    }
+  ],
+  "propertyAttribute": [
+    {
+      "id": "datatypeProperty1",
+      "iri": "http://visualdataweb.org/MCSBOntology/songTitle",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "songTitle",
+      "attributes": [
+        "datatype"
+      ],
+      "domain": "0",
+      "range": "NodeId2",
+      "pos": [
+        622.79,
+        110.9
+      ]
+    },
+    {
+      "id": "datatypeProperty2",
+      "iri": "http://visualdataweb.org/MCSBOntology/artistName",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "artistName",
+      "domain": "Class5",
+      "range": "NodeId6",
+      "pos": [
+        216.22,
+        328.88
+      ]
+    },
+    {
+      "id": "objectProperty3",
+      "iri": "http://visualdataweb.org/MCSBAOntology/has",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "has",
+      "domain": "0",
+      "range": "Class8",
+      "pos": [
+        855.85,
+        196.97
+      ]
+    },
+    {
+      "id": "datatypeProperty4",
+      "iri": "http://visualdataweb.org/MCSBOntology/songText",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "songText",
+      "domain": "Class8",
+      "range": "NodeId9",
+      "pos": [
+        1061,
+        15.13
+      ]
+    },
+    {
+      "id": "objectProperty5",
+      "iri": "http://visualdataweb.org/MCSBOntology/performs",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "performs",
+      "attributes": [
+        "object"
+      ],
+      "domain": "Class5",
+      "range": "0",
+      "pos": [
+        499.41,
+        243.39
+      ]
+    },
+    {
+      "id": "objectProperty6",
+      "iri": "http://visualdataweb.org/MCSBAOntology/hears",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "hears",
+      "attributes": [
+        "object"
+      ],
+      "domain": "Class4",
+      "range": "0",
+      "pos": [
+        720.26,
+        420.48
+      ]
+    },
+    {
+      "id": "objectProperty7",
+      "iri": "http://visualdataweb.org/MCSBAOntology/writes",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "writes",
+      "attributes": [
+        "object"
+      ],
+      "domain": "Class4",
+      "range": "Class10",
+      "pos": [
+        847.18,
+        755.71
+      ]
+    },
+    {
+      "id": "datatypeProperty8",
+      "iri": "http://visualdataweb.org/MCSBOntology/searchText",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "searchText",
+      "domain": "Class10",
+      "range": "NodeId11",
+      "pos": [
+        843,
+        1017.39
+      ]
+    },
+    {
+      "id": "objectProperty10",
+      "iri": "http://visualdataweb.org/MCSBOntology/contains",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "contains",
+      "domain": "Class8",
+      "range": "Class12",
+      "pos": [
+        1177.77,
+        249.05
+      ]
+    },
+    {
+      "id": "datatypeProperty12",
+      "iri": "http://visualdataweb.org/MCSBAOntology/userName",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "userName",
+      "domain": "Class4",
+      "range": "NodeId13",
+      "pos": [
+        644.59,
+        667.46
+      ]
+    },
+    {
+      "id": "objectProperty13",
+      "iri": "http://visualdataweb.org/MCSBOntology/searchFor",
+      "baseIri": "http://visualdataweb.org/MCSBAOntology/",
+      "label": "searchFor",
+      "domain": "Class10",
+      "range": "Class14",
+      "pos": [
+        1099.61,
+        866.96
+      ]
+    }
+  ]
+}
