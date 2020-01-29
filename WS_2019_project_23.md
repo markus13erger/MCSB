@@ -37,7 +37,12 @@ While processing extremely short and extremely long lyrics were removed as well 
 
 ### Markus Sieder:
 #### Google Data:
-To get my personal Google data I used the Google Takeout service which is provided when logging into my Google account. 
+To get my personal Google data I used the Google Takeout service which is provided when logging into my Google account. This service allows to download all kinds of data which Google saves, from YouTube searches to Google fit data there was a total of 46 different categories. It is not explicitly stated where my Google searches are saved, so I downloaded a bunch of different options which could include my search history. After selecting the datasets, I got a notification that it can take from some minutes up to several days until Google has compiled all my data, depending what da-tasets I requested and how big they are.
+
+Thankfully after just an hour I got an email notifying me that my data is ready for download. After looking through all the data with a lot of different formats I finally found my search history in the “my activities” dataset. Unfortunately, the data was saved in a HTML file which was not very useful. Back to the Google takeout service I found that for some datasets different data formats can be selected, therefore I chose a JSON format for my search history. Since I already knew what to re-quest it just took some minutes to compile my data.
+
+Finally, I got the needed dataset which included the searched terms, an URL for the Google search and a timestamp, exact to the millisecond. Since the search variable was always constructed like “Nach” + “actual Google search” + “gesucht” (“Nach gesucht” is “searched for” in German) this data needed some processing first. Therefore, it was loaded into RStudio and the searches were cleaned.
+
 #### Million Songs Data:
 -- Missing –
 
