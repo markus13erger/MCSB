@@ -3,7 +3,7 @@
 
 ## Task 1: Suggest a Semantic Application
 ### Description:
-The suggested application is a service build on top of a knowledge graph, which allows the users to explore and analyse their music consumption and their search behaviour. The focus lies especially on the connections of these two. Spotify data will be used for the music consumption and Google data will be used for the search behaviours of the users. These two different data sets will be con-nected by a lyrics dataset which enables the users to compare the lyrics of the songs they heard with their personal Google searches.
+The suggested application is a service build on top of a knowledge graph, which allows the users to explore and analyse their music consumption and their search behaviour. The focus lies especially on the connections of these two. Spotify data will be used for the music consumption and Google data will be used for the search behaviours of the users. These two different data sets will be connected by a lyrics dataset which enables the users to compare the lyrics of the songs they heard with their personal Google searches.
 
 ### This results in the following competency questions:
 - Who is the artist of a specific song?
