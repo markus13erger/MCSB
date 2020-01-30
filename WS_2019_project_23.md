@@ -17,7 +17,7 @@ The suggested application is a service build on top of a knowledge graph, which 
 -- Missing --
  
 ## Task 2: Data Collection
-Since we were only left with two group members, each one of us was responsible for collecting two different datasets, such that we have all the data to build our semantic app.
+Since we were only left with two group members, one of us was responsible for collecting two different datasets, such that we have all the data to build our semantic app.
 ### Markus Berger:
 #### Spotify Data:
 After a quick google search I found a link to request my personal data according to the GDPR regulations, which is explicitly stated on their homepage. How to get the personal data is not directly stated, but when logging in on their homepage and going to the privacy settings I found a step by step guide to get my data.
@@ -43,8 +43,6 @@ Thankfully after just an hour I got an email notifying me that my data is ready 
 
 Finally, I got the needed dataset which included the searched terms, an URL for the Google search and a timestamp, exact to the millisecond. Since the search variable was always constructed like “Nach” + “actual Google search” + “gesucht” (“Nach gesucht” is “searched for” in German) this data needed some processing first. Therefore, it was loaded into RStudio and the searches were cleaned.
 
-#### Million Songs Data:
--- Missing –
-
 ## Task 3: Create an ontology that models the selected domain
+To create the ontology we decided to use WebVOWL since it is more begginer friendly and basic than protégé. We followed steps of the "Ontology Creating 101" paper to create our ontology. This was originally written for protégé but can also be applied for other ontology editing services.
 
