@@ -170,8 +170,8 @@
         "en": "Song"
       },
       "pos": [
-        635.18,
-        258.02
+        704.72,
+        285.75
       ]
     },
     {
@@ -179,9 +179,12 @@
       "iri": "http://www.w3.org/2000/01/rdf-schema#Datatype",
       "baseIri": "http://www.w3.org/2001/XMLSchema#",
       "label": "string",
+      "attributes": [
+        "datatype"
+      ],
       "pos": [
-        520.83,
-        41.23
+        755.19,
+        41.47
       ]
     },
     {
@@ -190,8 +193,8 @@
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
       "label": "User",
       "pos": [
-        724.64,
-        614.26
+        619.84,
+        649.11
       ]
     },
     {
@@ -200,8 +203,8 @@
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
       "label": "Artist",
       "pos": [
-        281.94,
-        324
+        393.8,
+        118.29
       ]
     },
     {
@@ -209,9 +212,12 @@
       "iri": "http://www.w3.org/2000/01/rdf-schema#Datatype",
       "baseIri": "http://www.w3.org/2001/XMLSchema#",
       "label": "string",
+      "attributes": [
+        "datatype"
+      ],
       "pos": [
-        123.12,
-        496.56
+        201.75,
+        249.07
       ]
     },
     {
@@ -220,8 +226,8 @@
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
       "label": "Search",
       "pos": [
-        977.42,
-        870.42
+        968.26,
+        732.5
       ]
     },
     {
@@ -229,9 +235,12 @@
       "iri": "http://www.w3.org/2000/01/rdf-schema#Datatype",
       "baseIri": "http://www.w3.org/2001/XMLSchema#",
       "label": "string",
+      "attributes": [
+        "datatype"
+      ],
       "pos": [
-        878.59,
-        1085.32
+        1097.64,
+        930.17
       ]
     },
     {
@@ -239,9 +248,12 @@
       "iri": "http://www.w3.org/2000/01/rdf-schema#Datatype",
       "baseIri": "http://www.w3.org/2001/XMLSchema#",
       "label": "string",
+      "attributes": [
+        "datatype"
+      ],
       "pos": [
-        544.12,
-        775.71
+        457.7,
+        829.32
       ]
     },
     {
@@ -250,8 +262,8 @@
       "baseIri": "http://visualdataweb.org/MCSBOntology/",
       "label": "Word",
       "pos": [
-        1272.39,
-        272.32
+        1053.57,
+        387.59
       ]
     },
     {
@@ -259,9 +271,12 @@
       "iri": "http://www.w3.org/2000/01/rdf-schema#Datatype",
       "baseIri": "http://www.w3.org/2001/XMLSchema#",
       "label": "string",
+      "attributes": [
+        "datatype"
+      ],
       "pos": [
-        1122.39,
-        422.32
+        1240.82,
+        238.6
       ]
     }
   ],
@@ -313,11 +328,14 @@
       "iri": "http://visualdataweb.org/MCSBOntology/songTitle",
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
       "label": "songTitle",
+      "attributes": [
+        "datatype"
+      ],
       "domain": "0",
       "range": "NodeId2",
       "pos": [
-        568.98,
-        132.52
+        733.98,
+        144.13
       ]
     },
     {
@@ -325,11 +343,14 @@
       "iri": "http://visualdataweb.org/MCSBOntology/artistName",
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
       "label": "artistName",
+      "attributes": [
+        "datatype"
+      ],
       "domain": "Class5",
       "range": "NodeId6",
       "pos": [
-        190.2,
-        423.68
+        284.45,
+        192.75
       ]
     },
     {
@@ -343,23 +364,20 @@
       "domain": "Class5",
       "range": "0",
       "pos": [
-        458.56,
-        291.01
+        549.26,
+        202.02
       ]
     },
     {
       "id": "objectProperty6",
-      "iri": "http://visualdataweb.org/MCSBAOntology/hears",
+      "iri": "http://visualdataweb.org/MCSBOntology/listens_to",
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
-      "label": "hears",
-      "attributes": [
-        "object"
-      ],
+      "label": "listens_to",
       "domain": "Class4",
       "range": "0",
       "pos": [
-        679.91,
-        436.14
+        662.28,
+        467.43
       ]
     },
     {
@@ -373,8 +391,8 @@
       "domain": "Class4",
       "range": "Class10",
       "pos": [
-        851.03,
-        742.34
+        794.05,
+        690.81
       ]
     },
     {
@@ -382,11 +400,14 @@
       "iri": "http://visualdataweb.org/MCSBOntology/searchTime",
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
       "label": "searchTime",
+      "attributes": [
+        "datatype"
+      ],
       "domain": "Class10",
       "range": "NodeId11",
       "pos": [
-        919.86,
-        995.58
+        1043.37,
+        847.25
       ]
     },
     {
@@ -400,32 +421,38 @@
       "domain": "Class4",
       "range": "NodeId13",
       "pos": [
-        621.34,
-        706.65
+        526.54,
+        752.8
       ]
     },
     {
       "id": "objectProperty14",
-      "iri": "http://visualdataweb.org/MCSBOntology/contains",
+      "iri": "http://visualdataweb.org/MCSBOntology/search_contains",
       "baseIri": "http://visualdataweb.org/MCSBOntology/",
-      "label": "contains",
+      "label": "search_contains",
+      "attributes": [
+        "object"
+      ],
       "domain": "Class10",
       "range": "Class13",
       "pos": [
-        1124.91,
-        571.37
+        1010.92,
+        560.04
       ]
     },
     {
       "id": "objectProperty15",
-      "iri": "http://visualdataweb.org/MCSBOntology/contains",
+      "iri": "http://visualdataweb.org/MCSBOntology/song_contains",
       "baseIri": "http://visualdataweb.org/MCSBOntology/",
-      "label": "contains",
+      "label": "song_contains",
+      "attributes": [
+        "object"
+      ],
       "domain": "0",
       "range": "Class13",
       "pos": [
-        953.79,
-        265.17
+        879.15,
+        336.67
       ]
     },
     {
@@ -433,11 +460,14 @@
       "iri": "http://visualdataweb.org/MCSBOntology/words",
       "baseIri": "http://visualdataweb.org/MCSBOntology/",
       "label": "words",
+      "attributes": [
+        "datatype"
+      ],
       "domain": "Class13",
       "range": "NodeId14",
       "pos": [
-        1184.72,
-        360
+        1160.48,
+        302.53
       ]
     }
   ]
