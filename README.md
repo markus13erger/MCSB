@@ -7,4 +7,4 @@
   - lyrics data: Go to https://www.kaggle.com/mousehead/songlyrics/data and click the download link. Save it in the "data" folder and rename it to "lyrics_data".
 
 2. Pre-processing
-  Run the "pre-processing" jupyter notebook to pre process the data. Afterwards all the available files should be saved as CSV files in the "data" folder.
+  - Run the "pre-processing" jupyter notebook to pre process the data. Afterwards all the available files should be saved as CSV files in the "data" folder.
