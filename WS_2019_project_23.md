@@ -81,7 +81,7 @@ We used Graph DB as a triple store just as proposed. We had to adjust our RDF en
 
 ## Task 6: Develop a set of SPARQL queries to answer the competency questions
 
-1. Who is the artist of a specific song?
+### 1. Who is the artist of a specific song?
 
 - Query:
 
@@ -101,7 +101,7 @@ Construct {
 This query returns the artist of a specific song (Dancing Queen in this case). It is also worth mentioning that there are song title which were used multiple times and are therefore performed by multiple artists.
 
 
-2. Who is the most listened artist by a user?
+### 2. Who is the most listened artist by a user?
 
 - Query:
 
@@ -120,7 +120,7 @@ select DISTINCT ?time ?name where {
 This query returns the milliseconds played of any artist and orders them by descending order. Therefore, the number one entry is the most listened artist of a user.
 
 
-3. What are the lyrics of a specific song?
+### 3. What are the lyrics of a specific song?
 
 - Query:
 
@@ -140,7 +140,7 @@ construct {
 This query returns all the words used in a specific song (in this case once again Dancing Queen).
 
 
-4. What are the users searching for?
+### 4. What are the users searching for?
 
 - Query:
 
@@ -157,7 +157,7 @@ construct {
 
 This query returns all the words a user has searched for. In this case it just returns everything for the user Markus since this is the only user in our data.
 
-5. Are the users searching for songs they listened to?
+### 5. Are the users searching for songs they listened to?
 
 - Query:
 
@@ -167,7 +167,7 @@ This query returns all the words a user has searched for. In this case it just r
 
 -- Missing --
 
-6. Are the users searching for lyrics they listened to?
+### 6. Are the users searching for lyrics they listened to?
 
 - Query:
 
