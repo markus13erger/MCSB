@@ -6,5 +6,8 @@
   - google data: Go to https://takeout.google.com/settings/takeout?pli=1 and choose to request "My activities" as a JSON file. Follow the steps until you receive the data, save it in the "data" folder and rename it to "google_data".
   - lyrics data: Go to https://www.kaggle.com/mousehead/songlyrics/data and click the download link. Save it in the "data" folder and rename it to "lyrics_data".
 
-2. Pre-processing:
+2. Pre-process the data sets:
   - Run the "pre-processing" jupyter notebook to pre-process the data. Afterwards all the available files should be saved as CSV files in the "data" folder.
+
+3. Enrich data to RDF:
+  - Run the "transformation" jupyter notebook to enrich the datasets to RDF files. After running the notebook all the datasets should be combined to one RDF file in the "data" folder.
