@@ -10,4 +10,4 @@
   - Run the "pre-processing" jupyter notebook to pre-process the data. Afterwards all the available files should be saved as CSV files in the "data" folder.
 
 3. Enrich data to RDF:
-  - Run the "transformation" jupyter notebook to enrich the datasets to RDF files. After running the notebook all the datasets should be combined to one RDF file in the "data" folder.
+  - Run the "transformation" jupyter notebook to enrich the datasets to RDF files. After running the notebook all the datasets should be combined to one RDF file in the "data" folder called "MCSB".
