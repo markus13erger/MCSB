@@ -60,10 +60,10 @@
   "namespace": [],
   "settings": {
     "global": {
-      "zoom": "0.75",
+      "zoom": "0.68",
       "translation": [
-        262.27,
-        77.03
+        365.5,
+        138.75
       ],
       "paused": false
     },
@@ -156,7 +156,23 @@
       "type": "owl:Class"
     },
     {
-      "id": "NodeId14",
+      "id": "NodeId15",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "NodeId16",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "NodeId17",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "NodeId19",
+      "type": "rdfs:Datatype"
+    },
+    {
+      "id": "NodeId20",
       "type": "rdfs:Datatype"
     }
   ],
@@ -170,8 +186,8 @@
         "en": "Song"
       },
       "pos": [
-        704.72,
-        285.75
+        422.31,
+        260.32
       ]
     },
     {
@@ -183,8 +199,8 @@
         "datatype"
       ],
       "pos": [
-        755.19,
-        41.47
+        299.48,
+        35.6
       ]
     },
     {
@@ -193,8 +209,8 @@
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
       "label": "User",
       "pos": [
-        619.84,
-        649.11
+        717.42,
+        530.33
       ]
     },
     {
@@ -203,8 +219,8 @@
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
       "label": "Artist",
       "pos": [
-        393.8,
-        118.29
+        39.75,
+        309.9
       ]
     },
     {
@@ -216,8 +232,8 @@
         "datatype"
       ],
       "pos": [
-        201.75,
-        249.07
+        -107.01,
+        112.65
       ]
     },
     {
@@ -226,8 +242,8 @@
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
       "label": "Search",
       "pos": [
-        968.26,
-        732.5
+        889.51,
+        183.55
       ]
     },
     {
@@ -239,21 +255,21 @@
         "datatype"
       ],
       "pos": [
-        1097.64,
-        930.17
+        1080.1,
+        20.03
       ]
     },
     {
       "id": "NodeId13",
-      "iri": "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "iri": "http://www.w3.org/2001/XMLSchema#integer",
       "baseIri": "http://www.w3.org/2001/XMLSchema#",
-      "label": "string",
+      "label": "integer",
       "attributes": [
         "datatype"
       ],
       "pos": [
-        457.7,
-        829.32
+        902.06,
+        704.54
       ]
     },
     {
@@ -262,21 +278,73 @@
       "baseIri": "http://visualdataweb.org/MCSBOntology/",
       "label": "Word",
       "pos": [
-        1053.57,
-        387.59
+        625.37,
+        -77.39
       ]
     },
     {
-      "id": "NodeId14",
-      "iri": "http://www.w3.org/2000/01/rdf-schema#Datatype",
+      "id": "NodeId15",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
       "baseIri": "http://www.w3.org/2001/XMLSchema#",
       "label": "string",
       "attributes": [
         "datatype"
       ],
       "pos": [
-        1240.82,
-        238.6
+        659.12,
+        784.32
+      ]
+    },
+    {
+      "id": "NodeId16",
+      "iri": "http://www.w3.org/2001/XMLSchema#integer",
+      "baseIri": "http://www.w3.org/2001/XMLSchema#",
+      "label": "integer",
+      "attributes": [
+        "datatype"
+      ],
+      "pos": [
+        -82.35,
+        524.44
+      ]
+    },
+    {
+      "id": "NodeId17",
+      "iri": "http://www.w3.org/2001/XMLSchema#integer",
+      "baseIri": "http://www.w3.org/2001/XMLSchema#",
+      "label": "integer",
+      "attributes": [
+        "datatype"
+      ],
+      "pos": [
+        1112.51,
+        282.96
+      ]
+    },
+    {
+      "id": "NodeId19",
+      "iri": "http://www.w3.org/2001/XMLSchema#integer",
+      "baseIri": "http://www.w3.org/2001/XMLSchema#",
+      "label": "integer",
+      "attributes": [
+        "datatype"
+      ],
+      "pos": [
+        338.3,
+        503.69
+      ]
+    },
+    {
+      "id": "NodeId20",
+      "iri": "http://www.w3.org/2001/XMLSchema#string",
+      "baseIri": "http://www.w3.org/2001/XMLSchema#",
+      "label": "string",
+      "attributes": [
+        "datatype"
+      ],
+      "pos": [
+        644.63,
+        -327.4
       ]
     }
   ],
@@ -320,6 +388,22 @@
     {
       "id": "datatypeProperty16",
       "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "datatypeProperty17",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "datatypeProperty18",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "datatypeProperty19",
+      "type": "owl:DatatypeProperty"
+    },
+    {
+      "id": "datatypeProperty20",
+      "type": "owl:DatatypeProperty"
     }
   ],
   "propertyAttribute": [
@@ -334,8 +418,8 @@
       "domain": "0",
       "range": "NodeId2",
       "pos": [
-        733.98,
-        144.13
+        351.64,
+        131.02
       ]
     },
     {
@@ -349,8 +433,8 @@
       "domain": "Class5",
       "range": "NodeId6",
       "pos": [
-        284.45,
-        192.75
+        -44.83,
+        196.22
       ]
     },
     {
@@ -364,8 +448,8 @@
       "domain": "Class5",
       "range": "0",
       "pos": [
-        549.26,
-        202.02
+        231.03,
+        285.11
       ]
     },
     {
@@ -373,11 +457,14 @@
       "iri": "http://visualdataweb.org/MCSBOntology/listens_to",
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
       "label": "listens_to",
+      "attributes": [
+        "object"
+      ],
       "domain": "Class4",
       "range": "0",
       "pos": [
-        662.28,
-        467.43
+        569.87,
+        395.33
       ]
     },
     {
@@ -391,8 +478,8 @@
       "domain": "Class4",
       "range": "Class10",
       "pos": [
-        794.05,
-        690.81
+        803.46,
+        356.94
       ]
     },
     {
@@ -406,23 +493,23 @@
       "domain": "Class10",
       "range": "NodeId11",
       "pos": [
-        1043.37,
-        847.25
+        997.95,
+        90.51
       ]
     },
     {
       "id": "datatypeProperty12",
       "iri": "http://visualdataweb.org/MCSBAOntology/userName",
       "baseIri": "http://visualdataweb.org/MCSBAOntology/",
-      "label": "userName",
+      "label": "userAge",
       "attributes": [
         "datatype"
       ],
       "domain": "Class4",
       "range": "NodeId13",
       "pos": [
-        526.54,
-        752.8
+        822.62,
+        629.6
       ]
     },
     {
@@ -436,8 +523,8 @@
       "domain": "Class10",
       "range": "Class13",
       "pos": [
-        1010.92,
-        560.04
+        757.44,
+        53.08
       ]
     },
     {
@@ -451,23 +538,68 @@
       "domain": "0",
       "range": "Class13",
       "pos": [
-        879.15,
-        336.67
+        523.84,
+        91.47
       ]
     },
     {
       "id": "datatypeProperty16",
-      "iri": "http://visualdataweb.org/MCSBOntology/words",
+      "iri": "http://visualdataweb.org/MCSBOntology/userName",
       "baseIri": "http://visualdataweb.org/MCSBOntology/",
-      "label": "words",
-      "attributes": [
-        "datatype"
-      ],
-      "domain": "Class13",
-      "range": "NodeId14",
+      "label": "userName",
+      "domain": "Class4",
+      "range": "NodeId15",
       "pos": [
-        1160.48,
-        302.53
+        683.82,
+        676.69
+      ]
+    },
+    {
+      "id": "datatypeProperty17",
+      "iri": "http://visualdataweb.org/MCSBOntology/artistPlayed",
+      "baseIri": "http://visualdataweb.org/MCSBOntology/",
+      "label": "artistPlayed",
+      "domain": "Class5",
+      "range": "NodeId16",
+      "pos": [
+        -30.82,
+        433.9
+      ]
+    },
+    {
+      "id": "datatypeProperty18",
+      "iri": "http://visualdataweb.org/MCSBOntology/searchID",
+      "baseIri": "http://visualdataweb.org/MCSBOntology/",
+      "label": "searchID",
+      "domain": "Class10",
+      "range": "NodeId17",
+      "pos": [
+        1012.63,
+        238.43
+      ]
+    },
+    {
+      "id": "datatypeProperty19",
+      "iri": "http://visualdataweb.org/MCSBOntology/songPlayed",
+      "baseIri": "http://visualdataweb.org/MCSBOntology/",
+      "label": "songPlayed",
+      "domain": "0",
+      "range": "NodeId19",
+      "pos": [
+        373.88,
+        400.64
+      ]
+    },
+    {
+      "id": "datatypeProperty20",
+      "iri": "http://visualdataweb.org/MCSBOntology/value",
+      "baseIri": "http://visualdataweb.org/MCSBOntology/",
+      "label": "wordValue",
+      "domain": "Class13",
+      "range": "NodeId20",
+      "pos": [
+        636.54,
+        -222.32
       ]
     }
   ]
