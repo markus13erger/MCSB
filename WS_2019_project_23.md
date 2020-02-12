@@ -70,6 +70,33 @@ The file "google_data.json" was also pre-processed in R, where I removed unneces
 
 Next on I started working with Python to lift the data to RDF. There I had to add an extra column for the ID so we could later identify specific searches. I also removed the stop words just as we did with the lyrics. For the RDF transformation I created the class "Search" which has an exact time stamp "searchTime" and an individual "searchID". The class "Search" contains "Word" which consists of all the search words respectively.
 
+#### User Data
 We also created the class "User" where we did not have a data set. We just created ourselves since we listened to "Song" and wrote "Search". "User" also has an "userName" and an "userAge".
 
-After creating all classes and their properties we combined them all into one RDF file which precisely reflects our ontology.
+### Complete RDF
+After creating all classes and their properties we combined them all into one RDF file which precisely reflects our ontology. This made it easier for the next step when loading our knowledge graph into a triple store.
+
+## Task 5: Load your Knowledge Graph into a triple store
+We used Graph DB as a triple store just as proposed. We had to adjust our RDF enrichment a few times to get everything right, but when we started to use a single RDF file everything worked just fine.
+
+## Task 6: Develop a set of SPARQL queries to answer the competency questions
+
+### Markus Berger
+1.
+Competency question:
+Who is the artist of a specific song?
+
+Query:
+Construct {
+    ?artist foaf:sings ?song .
+    ?song foaf:sungby ?artist .
+} Where {
+    ?artist foaf:sings ?song .
+    ?song foaf:contains ?word .
+    ?artist foaf:name ?aname .
+    ?song foaf:title "Dancing+Queen" .
+    ?word foaf:value ?cname .
+}
+
+Description:
+This query returns the artist of a specific song (Dancing Queen in this case). It is also worth mentioning that there are song title which were used multiple times and are therefore performed by multiple artists.
