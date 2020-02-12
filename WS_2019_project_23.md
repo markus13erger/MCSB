@@ -83,7 +83,7 @@ We used Graph DB as a triple store just as proposed. We had to adjust our RDF en
 
 ### 1. Who is the artist of a specific song?
 
-- Query:
+#### Query:
 
 Construct {<br/>
     ?artist foaf:sings ?song .<br/>
@@ -96,14 +96,14 @@ Construct {<br/>
     ?word foaf:value ?cname .<br/>
 }
 
-- Description:
+#### Description:
 
 This query returns the artist of a specific song (Dancing Queen in this case). It is also worth mentioning that there are song title which were used multiple times and are therefore performed by multiple artists.
 
 
 ### 2. Who is the most listened artist by a user?
 
-- Query:
+#### Query:
 
 select DISTINCT ?time ?name where {<br/>
     ?artist foaf:spotsings ?song .<br/>
@@ -115,14 +115,14 @@ select DISTINCT ?time ?name where {<br/>
     ?artist foaf:spotname ?name<br/>
 } ORDER BY DESC(xsd:nonNegativeInteger(?time))
 
-- Description:
+#### Description:
 
 This query returns the milliseconds played of any artist and orders them by descending order. Therefore, the number one entry is the most listened artist of a user.
 
 
 ### 3. What are the lyrics of a specific song?
 
-- Query:
+#### Query:
 
 construct {<br/>
     ?a foaf:contains ?b .<br/>
@@ -135,14 +135,14 @@ construct {<br/>
     ?a rdf:type ?song .<br/>
 }
 
-- Description:
+#### Description:
 
 This query returns all the words used in a specific song (in this case once again Dancing Queen).
 
 
 ### 4. What are the users searching for?
 
-- Query:
+#### Query:
 
 construct {<br/>
     ?u foaf:searched_word ?w .<br/>
@@ -153,26 +153,22 @@ construct {<br/>
     ?w rdf:type ?Word .<br/>
 }
 
-- Description:
+#### Description:
 
 This query returns all the words a user has searched for. In this case it just returns everything for the user Markus since this is the only user in our data.
 
 ### 5. Are the users searching for songs they listened to?
 
-- Query:
-
+#### Query:
 -- Missing --
 
-- Description:
-
+#### Description:
 -- Missing --
 
 ### 6. Are the users searching for lyrics they listened to?
 
-- Query:
-
+#### Query:
 -- Missing --
 
-- Description:
-
+#### Description:
 -- Missing --
