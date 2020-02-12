@@ -82,9 +82,7 @@ We used Graph DB as a triple store just as proposed. We had to adjust our RDF en
 ## Task 6: Develop a set of SPARQL queries to answer the competency questions
 
 ### Markus Berger
-1.
-Competency question:
-Who is the artist of a specific song?
+1. Who is the artist of a specific song?
 
 Query:
 Construct {
@@ -100,3 +98,68 @@ Construct {
 
 Description:
 This query returns the artist of a specific song (Dancing Queen in this case). It is also worth mentioning that there are song title which were used multiple times and are therefore performed by multiple artists.
+
+2. Who is the most listened artist by a user?
+
+Query:
+select DISTINCT ?time ?name where {
+    ?artist foaf:spotsings ?song .
+    ?artist rdf:type ?spotartist .
+    ?song rdf:type ?spotsong .
+    ?markus foaf:artist_listened ?artist.
+    ?artist foaf:artist_ms ?time .
+    ?song foaf:spottitle ?title .
+    ?artist foaf:spotname ?name
+} ORDER BY DESC(xsd:nonNegativeInteger(?time))
+
+Description:
+This query returns the milliseconds played of any artist and orders them by descending order. Therefore, the number one entry is the most listened artist of a user.
+
+3. What are the lyrics of a specific song?
+
+Query:
+construct {
+    ?a foaf:contains ?b .
+} where {
+    ?c foaf:sings ?a .
+    ?a foaf:contains ?b .
+    ?c rdf:type ?artist .
+    ?a foaf:title "Dancing+Queen" .
+    ?b rdf:type ?value .
+    ?a rdf:type ?song .   
+}
+
+Description:
+This query returns all the words used in a specific song (in this case once again Dancing Queen).
+
+
+4. What are the users searching for?
+
+Query:
+construct {
+    ?u foaf:searched_word ?w .
+} where {
+    ?se foaf:search_contains ?w .
+        ?u foaf:searched ?se .
+    ?u rdf:type ?User .
+    ?w rdf:type ?Word .
+}
+
+Description:
+This query returns all the words a user has searched for. In this case it just returns everything for the user Markus since this is the only user in our data.
+
+5. Are the users searching for songs they listened to?
+
+Query:
+-- Missing --
+
+Description:
+-- Missing --
+
+6. Are the users searching for lyrics they listened to?
+
+Query:
+-- Missing --
+
+Description:
+-- Missing --
