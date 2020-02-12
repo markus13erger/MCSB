@@ -44,8 +44,28 @@ Thankfully after just an hour I got an email notifying me that my data is ready 
 Finally, I got the needed dataset which included the searched terms, an URL for the Google search and a timestamp, exact to the millisecond. Since the search variable was always constructed like “Nach” + “actual Google search” + “gesucht” (“Nach gesucht” is “searched for” in German) this data needed some processing first. Therefore, it was loaded into RStudio and the searches were cleaned.
 
 ## Task 3: Create an ontology that models the selected domain
-To create the ontology we decided to use WebVOWL since it is more begginer friendly and basic than protégé. We followed steps of the "Ontology Creating 101" paper to create our ontology. This was originally written for protégé but can also be applied for other ontology editing services.
+To create the ontology we decided to use WebVOWL since it is more begginer friendly and basic than protégé. We followed steps of the "Ontology Creating 101" paper to create our ontology. This was originally written for protégé but can also be applied for other ontology editing services. The whole process of creating a fitting ontology was pretty iterative and we had to often revise it when working on the knowledge graph.
 
 Seen below is the complete ontology in WebVOWL. We have a total of five classes (User, Artist, Word, Search and Song) with multiple properties:
 
 ![Ontology](https://raw.githubusercontent.com/markus13erger/MCSB/master/MCSBOntology.png)
+
+## Task 4: Create a Knowledge Graph
+Before creating a RDF file the data needed some pre-processing first using R. Then to lift the obtained data to RDF we tried using OpenRefine, but it was not very intuitive so we decided to switch to Python for which the RDFlib package is available which allowed us to transform our data into an RDF file with XML format. First we created three different RDF files for the lyrics, google and spotify data each.
+
+### Markus Sieder
+#### Spotify Data:
+As already mentioned all of the data was pre-processed in R. We used the package "jsonlite" to read the "spotify_data.json" file. Afterwards I removed all rows which included songs that were played less than 10.000 ms (10 sec), because these were probably just skipped and not played, therefore they were not interesting for our application. Afterwards the data was saved as a CSV file.
+
+In Python I realised that the songs from the artist "Vigiland" were not correctly saved in the CSV file so I removed them. Afterwards I did reset the index such that there was a complete index from 1 to n. -- DESCRIBE RDF TRANSFORMATION PROCESS --
+
+#### Lyrics Data:
+The lyrics data set did not need any additional pre-processing in R.
+
+In Python I removed the linebreaks, such that the words of the lyrics were just seperated by a single space " ". Additionally, I removed the spaces in the artist and song name by "+", because otherwise this would later cause problems when lifting the data to RDF. Finally, I removed any stop words from the lyrics, because they would overshwadow any useful words in their frequency. -- DESCRIBE RDF TRANSFORMATION PROCESS --
+
+### Markus Berger
+#### Google Data:
+The file "google_data.json" was also pre-processed in R, where we removed unnecessary columns until there were just two columns for the words searched and the time searched left. The time stamp needed some transformation to be more readable. Additionally, there where some words added, especially "Nach" (German for "for") and "gesucht" (German for "searched") which where included in the beginning and ending of nearly every search. These needed to be removed. Non-ASCII characters would also lead to problems and where therefore also removed. Finally, the searches contained a lot of URLs which where also removed. To round things up the columns were renamed to "words" and "searchTime" and the index was resettet. The pre-processed data was saved as a CSV file.
+
+Next on I started working with Python to lift the data to RDF. There I had to add an extra column for the ID so we could later identify specific searches. I also removed the stop words just as we did with the lyrics. -- DESCRIBE RDF TRANSFORMATION PROCESS --
