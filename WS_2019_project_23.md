@@ -51,7 +51,7 @@ Seen below is the complete ontology in WebVOWL. We have a total of five classes 
 ![Ontology](https://raw.githubusercontent.com/markus13erger/MCSB/master/MCSBOntology.png)
 
 ## Task 4: Create a Knowledge Graph
-Before creating a RDF file the data needed some pre-processing first using R. Then to lift the obtained data to RDF we tried using OpenRefine, but it was not very intuitive so we decided to switch to Python for which the RDFlib package is available which allowed us to transform our data into an RDF file with XML format. First we created three different RDF files for the lyrics, google and spotify data each.
+Before creating a RDF file the data needed some pre-processing first using R. Then to lift the obtained data to RDF we tried using OpenRefine, but it was not very intuitive so we decided to switch to Python for which the RDFlib package is available which allowed us to transform our data into an RDF file with XML format. First we created three different RDF files for the lyrics, google and spotify data each, but then we realised that the relations between our classes are better shown in one single RDF file. Therefore, we combined all of the three existing RDF files into one.
 
 ### Markus Sieder
 #### Spotify Data:
@@ -66,6 +66,6 @@ In Python I removed the linebreaks, such that the words of the lyrics were just 
 
 ### Markus Berger
 #### Google Data:
-The file "google_data.json" was also pre-processed in R, where we removed unnecessary columns until there were just two columns for the words searched and the time searched left. The time stamp needed some transformation to be more readable. Additionally, there where some words added, especially "Nach" (German for "for") and "gesucht" (German for "searched") which where included in the beginning and ending of nearly every search. These needed to be removed. Non-ASCII characters would also lead to problems and where therefore also removed. Finally, the searches contained a lot of URLs which where also removed. To round things up the columns were renamed to "words" and "searchTime" and the index was resettet. The pre-processed data was saved as a CSV file.
+The file "google_data.json" was also pre-processed in R, where I removed unnecessary columns until there were just two columns for the words searched and the time searched left. The time stamp needed some transformation to be more readable. Additionally, there where some words added, especially "Nach" (German for "for") and "gesucht" (German for "searched") which where included in the beginning and ending of nearly every search. These needed to be removed. Non-ASCII characters would also lead to problems and where therefore also removed. Finally, the searches contained a lot of URLs which where also removed. To round things up the columns were renamed to "words" and "searchTime" and the index was resettet. The pre-processed data was saved as a CSV file.
 
 Next on I started working with Python to lift the data to RDF. There I had to add an extra column for the ID so we could later identify specific searches. I also removed the stop words just as we did with the lyrics. -- DESCRIBE RDF TRANSFORMATION PROCESS --
