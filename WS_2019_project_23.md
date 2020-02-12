@@ -85,15 +85,15 @@ We used Graph DB as a triple store just as proposed. We had to adjust our RDF en
 
 - Query:
 
-Construct {
-    ?artist foaf:sings ?song .
-    ?song foaf:sungby ?artist .
-} Where {
-    ?artist foaf:sings ?song .
-    ?song foaf:contains ?word .
-    ?artist foaf:name ?aname .
-    ?song foaf:title "Dancing+Queen" .
-    ?word foaf:value ?cname .
+Construct {<br/>
+    ?artist foaf:sings ?song .<br/>
+    ?song foaf:sungby ?artist .<br/>
+} Where {<br/>
+    ?artist foaf:sings ?song .<br/>
+    ?song foaf:contains ?word .<br/>
+    ?artist foaf:name ?aname .<br/>
+    ?song foaf:title "Dancing+Queen" .<br/>
+    ?word foaf:value ?cname .<br/>
 }
 
 - Description:
@@ -105,14 +105,14 @@ This query returns the artist of a specific song (Dancing Queen in this case). I
 
 - Query:
 
-select DISTINCT ?time ?name where {
-    ?artist foaf:spotsings ?song .
-    ?artist rdf:type ?spotartist .
-    ?song rdf:type ?spotsong .
-    ?markus foaf:artist_listened ?artist.
-    ?artist foaf:artist_ms ?time .
-    ?song foaf:spottitle ?title .
-    ?artist foaf:spotname ?name
+select DISTINCT ?time ?name where {<br/>
+    ?artist foaf:spotsings ?song .<br/>
+    ?artist rdf:type ?spotartist .<br/>
+    ?song rdf:type ?spotsong .<br/>
+    ?markus foaf:artist_listened ?artist.<br/>
+    ?artist foaf:artist_ms ?time .<br/>
+    ?song foaf:spottitle ?title .<br/>
+    ?artist foaf:spotname ?name<br/>
 } ORDER BY DESC(xsd:nonNegativeInteger(?time))
 
 - Description:
@@ -124,15 +124,15 @@ This query returns the milliseconds played of any artist and orders them by desc
 
 - Query:
 
-construct {
-    ?a foaf:contains ?b .
-} where {
-    ?c foaf:sings ?a .
-    ?a foaf:contains ?b .
-    ?c rdf:type ?artist .
-    ?a foaf:title "Dancing+Queen" .
-    ?b rdf:type ?value .
-    ?a rdf:type ?song .   
+construct {<br/>
+    ?a foaf:contains ?b .<br/>
+} where {<br/>
+    ?c foaf:sings ?a .<br/>
+    ?a foaf:contains ?b .<br/>
+    ?c rdf:type ?artist .<br/>
+    ?a foaf:title "Dancing+Queen" .<br/>
+    ?b rdf:type ?value .<br/>
+    ?a rdf:type ?song .<br/>
 }
 
 - Description:
@@ -144,13 +144,13 @@ This query returns all the words used in a specific song (in this case once agai
 
 - Query:
 
-construct {
-    ?u foaf:searched_word ?w .
-} where {
-    ?se foaf:search_contains ?w .
-        ?u foaf:searched ?se .
-    ?u rdf:type ?User .
-    ?w rdf:type ?Word .
+construct {<br/>
+    ?u foaf:searched_word ?w .<br/>
+} where {<br/>
+    ?se foaf:search_contains ?w .<br/>
+        ?u foaf:searched ?se .<br/>
+    ?u rdf:type ?User .<br/>
+    ?w rdf:type ?Word .<br/>
 }
 
 - Description:
