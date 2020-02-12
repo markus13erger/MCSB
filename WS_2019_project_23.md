@@ -84,7 +84,7 @@ We used Graph DB as a triple store just as proposed. We had to adjust our RDF en
 ### Markus Berger
 1. Who is the artist of a specific song?
 
-Query:
+- Query:
 Construct {
     ?artist foaf:sings ?song .
     ?song foaf:sungby ?artist .
@@ -96,7 +96,7 @@ Construct {
     ?word foaf:value ?cname .
 }
 
-Description:
+- Description:
 This query returns the artist of a specific song (Dancing Queen in this case). It is also worth mentioning that there are song title which were used multiple times and are therefore performed by multiple artists.
 
 2. Who is the most listened artist by a user?
