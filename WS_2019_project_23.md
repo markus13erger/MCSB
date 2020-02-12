@@ -48,4 +48,4 @@ To create the ontology we decided to use WebVOWL since it is more begginer frien
 
 Seen below is the complete ontology in WebVOWL. We have a total of five classes (User, Artist, Word, Search and Song) with multiple properties:
 
-![alt text](https://github.com/markus13erger/MCSB/master/MCSBOntology.png)
+![Ontology](https://raw.githubusercontent.com/markus13erger/MCSB/master/MCSBOntology.png)
