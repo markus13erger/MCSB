@@ -46,3 +46,5 @@ Finally, I got the needed dataset which included the searched terms, an URL for 
 ## Task 3: Create an ontology that models the selected domain
 To create the ontology we decided to use WebVOWL since it is more begginer friendly and basic than protégé. We followed steps of the "Ontology Creating 101" paper to create our ontology. This was originally written for protégé but can also be applied for other ontology editing services.
 
+Seen below is the complete ontology in WebVOWL. We have a total of five classes (User, Artist, Word, Search and Song) with multiple properties:
+
