@@ -84,19 +84,16 @@ We used Graph DB as a triple store just as proposed. We had to adjust our RDF en
 ### 1. Who is the artist of a specific song?
 
 #### Query:
-{
 
-	Construct {<br/>
-    		?artist foaf:sings ?song .<br/>
-    		?song foaf:sungby ?artist .<br/>
-	} Where {<br/>
-    		?artist foaf:sings ?song .<br/>
-    		?song foaf:contains ?word .<br/>
-    		?artist foaf:name ?aname .<br/>
-    		?song foaf:title "Dancing+Queen" .<br/>
-    		?word foaf:value ?cname .<br/>
-	}
-
+Construct {<br/>
+    ?artist foaf:sings ?song .<br/>
+    ?song foaf:sungby ?artist .<br/>
+} Where {<br/>
+    ?artist foaf:sings ?song .<br/>
+    ?song foaf:contains ?word .<br/>
+    ?artist foaf:name ?aname .<br/>
+    ?song foaf:title "Dancing+Queen" .<br/>
+    ?word foaf:value ?cname .<br/>
 }
 #### Description:
 This query returns the artist of a specific song (Dancing Queen in this case). It is also worth mentioning that there are song title which were used multiple times and are therefore performed by multiple artists.
@@ -105,18 +102,15 @@ This query returns the artist of a specific song (Dancing Queen in this case). I
 ### 2. Who is the most listened artist by a user?
 
 #### Query:
-{
-
-	select DISTINCT ?time ?name where {<br/>
-    		?artist foaf:spotsings ?song .<br/>
-    		?artist rdf:type ?spotartist .<br/>
-    		?song rdf:type ?spotsong .<br/>
-    		?markus foaf:artist_listened ?artist.<br/>
-    		?artist foaf:artist_ms ?time .<br/>
-    		?song foaf:spottitle ?title .<br/>
-    		?artist foaf:spotname ?name<br/>
-	} ORDER BY DESC(xsd:nonNegativeInteger(?time))
-}
+select DISTINCT ?time ?name where {<br/>
+    ?artist foaf:spotsings ?song .<br/>
+    ?artist rdf:type ?spotartist .<br/>
+    ?song rdf:type ?spotsong .<br/>
+    ?markus foaf:artist_listened ?artist.<br/>
+    ?artist foaf:artist_ms ?time .<br/>
+    ?song foaf:spottitle ?title .<br/>
+    ?artist foaf:spotname ?name<br/>
+} ORDER BY DESC(xsd:nonNegativeInteger(?time))
 
 #### Description:
 This query returns the milliseconds played of any artist and orders them by descending order. Therefore, the number one entry is the most listened artist of a user.
@@ -125,18 +119,15 @@ This query returns the milliseconds played of any artist and orders them by desc
 ### 3. What are the lyrics of a specific song?
 
 #### Query:
-{
-
-	construct {<br/>
-    		?a foaf:contains ?b .<br/>
-	} where {<br/>
-    		?c foaf:sings ?a .<br/>
-    		?a foaf:contains ?b .<br/>
-    		?c rdf:type ?artist .<br/>
-    		?a foaf:title "Dancing+Queen" .<br/>
-    		?b rdf:type ?value .<br/>
-    		?a rdf:type ?song .<br/>
-	}
+construct {<br/>
+    ?a foaf:contains ?b .<br/>
+} where {<br/>
+    ?c foaf:sings ?a .<br/>
+    ?a foaf:contains ?b .<br/>
+    ?c rdf:type ?artist .<br/>
+    ?a foaf:title "Dancing+Queen" .<br/>
+    ?b rdf:type ?value .<br/>
+    ?a rdf:type ?song .<br/>
 }
 #### Description:
 This query returns all the words used in a specific song (in this case once again Dancing Queen).
@@ -145,16 +136,13 @@ This query returns all the words used in a specific song (in this case once agai
 ### 4. What are the users searching for?
 
 #### Query:
-{
-
-	construct {<br/>
-    		?u foaf:searched_word ?w .<br/>
-	} where {<br/>
-    		?se foaf:search_contains ?w .<br/>
-        	?u foaf:searched ?se .<br/>
-    	?u rdf:type ?User .<br/>
-    	?w rdf:type ?Word .<br/>
-	}
+construct {<br/>
+    ?u foaf:searched_word ?w .<br/>
+} where {<br/>
+    ?se foaf:search_contains ?w .<br/>
+        ?u foaf:searched ?se .<br/>
+    ?u rdf:type ?User .<br/>
+    ?w rdf:type ?Word .<br/>
 }
 #### Description:
 This query returns all the words a user has searched for. In this case it just returns everything for the user Markus since this is the only user in our data.
@@ -162,25 +150,21 @@ This query returns all the words a user has searched for. In this case it just r
 ### 5. Are the users searching for songs they listened to?
 
 #### Query:
-
-{
-	construct {
-
-    		?u foaf:searched_word ?w .
-    		?u foaf:song_listened ?s.
-    		?s foaf:song_contains ?w .
+construct {<br/>
+    ?u foaf:searched_word ?w .<br/>
+    ?u foaf:song_listened ?s.<br/>
+    ?s foaf:song_contains ?w .<br/>
     
 
-	}where { 
-    		{?se foaf:search_contains ?w .
-    		?s foaf:song_contains ?w.
-		?u foaf:searched ?se .
-    		?s rdf:type ?Song .
-    		?u rdf:type ?User .
-    		?w rdf:type ?Word .
-    		?w foaf:value "Berlin".}
-	} 
-}
+}where { <br/>
+    {?se foaf:search_contains ?w .<br/>
+    ?s foaf:song_contains ?w.<br/>
+    ?u foaf:searched ?se .<br/>
+    ?s rdf:type ?Song .<br/>
+    ?u rdf:type ?User .<br/>
+    ?w rdf:type ?Word .<br/>
+    ?w foaf:value "Berlin".}<br/>
+} 
 
 #### Description:
 This query is designed to check, whether a user has searched for a specific song which is assumed he listened to. If a song is asked that the user neither listened to nor searched it will return nothing. In this case we made a specific lookup for "Berlin", which is a song the user listened to and a term he searched for.
@@ -188,24 +172,20 @@ This query is designed to check, whether a user has searched for a specific song
 ### 6. Are the users searching for lyrics they listened to?
 
 #### Query:
-{
+construct {<br/>
+    ?u foaf:searched_word ?w .<br/>
+    ?u foaf:song_listened ?s.<br/>
+    ?s foaf:song_contains ?w .<br/>
 
-	construct {<br/>
 
-    	?u foaf:searched_word ?w .<br/>
-    	?u foaf:song_listened ?s.<br/>
-    	?s foaf:song_contains ?w .<br/>
-    
-
-	}where { <br/>
-    		{?se foaf:search_contains ?w .<br/>
-    		?s foaf:song_contains ?w.<br/>
-		?u foaf:searched ?se .<br/>
-   		?s rdf:type ?Song .<br/>
-    		?u rdf:type ?User .<br/>
-    		?w rdf:type ?Word .<br/>
-    		?se foaf:id "824".}<br/>
-		
+}where { <br/>
+    {?se foaf:search_contains ?w .<br/>
+    ?s foaf:song_contains ?w.<br/>
+    ?u foaf:searched ?se .<br/>
+    ?s rdf:type ?Song .<br/>
+    ?u rdf:type ?User .<br/>
+    ?w rdf:type ?Word .<br/>
+    ?se foaf:id "824".}<br/>
 } 
 
 #### Description:
