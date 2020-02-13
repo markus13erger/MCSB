@@ -160,7 +160,22 @@ This query returns all the words a user has searched for. In this case it just r
 ### 6. Are the users searching for lyrics they listened to?
 
 #### Query:
--- Missing --
+construct {<br/>
+
+    ?u foaf:searched_word ?w .<br/>
+    ?u foaf:song_listened ?s.<br/>
+    ?s foaf:song_contains ?w .<br/>
+    
+
+}where { <br/>
+    {?se foaf:search_contains ?w .<br/>
+    ?s foaf:song_contains ?w.<br/>
+	?u foaf:searched ?se .<br/>
+    ?s rdf:type ?Song .<br/>
+    ?u rdf:type ?User .<br/>
+    ?w rdf:type ?Word .<br/>
+    ?se foaf:id "824".}<br/>
+} 
 
 #### Description:
 -- Missing --
