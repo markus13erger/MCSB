@@ -102,15 +102,15 @@ This query returns the artist of a specific song (Dancing Queen in this case). I
 ### 2. Who is the most listened artist by a user? (Sieder)
 
 #### Query:
-select DISTINCT ?time ?name where {<br/>
-    ?artist foaf:spotsings ?song .<br/>
-    ?artist rdf:type ?spotartist .<br/>
-    ?song rdf:type ?spotsong .<br/>
-    ?markus foaf:artist_listened ?artist.<br/>
-    ?artist foaf:artist_ms ?time .<br/>
-    ?song foaf:spottitle ?title .<br/>
-    ?artist foaf:spotname ?name<br/>
-} ORDER BY DESC(xsd:nonNegativeInteger(?time))
+select DISTINCT ?time ?artist ?name where { <br/>
+	?artist foaf:performs ?song .<br/>
+   	 ?artist rdf:type ?Artist .<br/>
+   	 ?song rdf:type ?Song .<br/>
+   	 ?markus foaf:artist_listened ?artist.<br/>
+    	 ?artist foaf:artist_ms ?time .<br/>
+    	 ?song foaf:title ?title .<br/>
+   	 ?artist foaf:name ?name<br/>
+} ORDER BY DESC(xsd:nonNegativeInteger(?time))<br/>
 
 #### Description:
 This query returns the milliseconds played of any artist and orders them by descending order. Therefore, the number one entry is the most listened artist of a user.
