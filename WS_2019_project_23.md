@@ -167,7 +167,7 @@ where { <br/>
 } 
 
 #### Description:
-This Query puts out all unique songs that the user searched for. In total, there are only 13 songs that the user also searched for on google. In our case it is only possible to check one word as a time which results in troubles if the song title contains more than one word (for example "Dancing Queen"). This is a problem resulting from our song titles, since we chose to use song titles separated with a "+" (e.g. "Dancing+Queen"), where we could have introduced a new variable for title that links back to our rdf:Word. This is something we did not consider but is an important aspect for future projects.
+This Query looks up all unique songs that the user searched for. In total, there are only 13 songs that the user also searched for on google. In our case it is only possible to check one word as a time which results in troubles if the song title contains more than one word (for example "Dancing Queen"). This is a problem resulting from our song titles, since we chose to use song titles separated with a "+" (e.g. "Dancing+Queen"), where we could have introduced a new variable for title that links back to our rdf:Word. This is something we did not consider but is an important aspect for future projects.
 
 ### 6. Are the users searching for lyrics they listened to?
 
