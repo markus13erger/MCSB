@@ -84,17 +84,17 @@ We used Graph DB as a triple store just as proposed. We had to adjust our RDF en
 ### 1. Who is the artist of a specific song? (Berger)
 
 #### Query:
-
-Construct {<br/>
+CONSTRUCT {<br/>
     ?artist foaf:sings ?song .<br/>
     ?song foaf:sungby ?artist .<br/>
-} Where {<br/>
+} WHERE {<br/>
     ?artist foaf:sings ?song .<br/>
     ?song foaf:contains ?word .<br/>
     ?artist foaf:name ?aname .<br/>
     ?song foaf:title "Dancing+Queen" .<br/>
     ?word foaf:value ?cname .<br/>
 }
+
 #### Description:
 This query returns the artist of a specific song (Dancing Queen in this case). It is also worth mentioning that there are song title which were used multiple times and are therefore performed by multiple artists.
 
@@ -102,14 +102,15 @@ This query returns the artist of a specific song (Dancing Queen in this case). I
 ### 2. Who is the most listened artist by a user? (Sieder)
 
 #### Query:
-select DISTINCT ?time ?artist ?name where { <br/>
+SELECT DISTINCT ?time ?artist ?name<br/>
+WHERE {<br/>
 	?artist foaf:performs ?song .<br/>
    	 ?artist rdf:type ?Artist .<br/>
    	 ?song rdf:type ?Song .<br/>
    	 ?markus foaf:artist_listened ?artist.<br/>
     	 ?artist foaf:artist_ms ?time .<br/>
     	 ?song foaf:title ?title .<br/>
-   	 ?artist foaf:name ?name<br/>
+   	 ?artist foaf:name ?name .<br/>
 } ORDER BY DESC(xsd:nonNegativeInteger(?time))<br/>
 
 #### Description:
@@ -119,9 +120,9 @@ This query returns the milliseconds played of any artist and orders them by desc
 ### 3. What are the lyrics of a specific song? (Berger)
 
 #### Query:
-construct {<br/>
+CONSTRUCT {<br/>
     ?a foaf:contains ?b .<br/>
-} where {<br/>
+} WHERE {<br/>
     ?c foaf:sings ?a .<br/>
     ?a foaf:contains ?b .<br/>
     ?c rdf:type ?artist .<br/>
@@ -129,6 +130,7 @@ construct {<br/>
     ?b rdf:type ?value .<br/>
     ?a rdf:type ?song .<br/>
 }
+
 #### Description:
 This query returns all the words used in a specific song (in this case once again Dancing Queen).
 
@@ -136,14 +138,15 @@ This query returns all the words used in a specific song (in this case once agai
 ### 4. What are the users searching for? (Sieder)
 
 #### Query:
-construct {<br/>
+CONSTRUCT {<br/>
     ?u foaf:searched_word ?w .<br/>
-} where {<br/>
+} WHERE {<br/>
     ?se foaf:search_contains ?w .<br/>
-        ?u foaf:searched ?se .<br/>
+    ?u foaf:searched ?se .<br/>
     ?u rdf:type ?User .<br/>
     ?w rdf:type ?Word .<br/>
 }
+
 #### Description:
 This query returns all the words a user has searched for. In this case it just returns everything for the user Markus since this is the only user in our data.
 
@@ -156,13 +159,12 @@ WHERE { <br/>
     ?u foaf:song_listened ?s .<br/>
     ?s rdf:type ?Song .<br/>
     ?u rdf:type ?User .<br/>
-    ?w rdf:type ?Word.<br/>
-    ?se rdf:type ?Search.<br/>
+    ?w rdf:type ?Word .<br/>
+    ?se rdf:type ?Search .<br/>
     ?se foaf:search_contains ?w .<br/>
-    ?s foaf:title ?x.<br/>
-    ?w foaf:value ?y.<br/>
-        FILTER(?x=?y).    <br/>    
-
+    ?s foaf:title ?x .<br/>
+    ?w foaf:value ?y .<br/>
+        FILTER(?x=?y) .<br/>
    }<br/>        
 } 
 
@@ -176,32 +178,32 @@ CONSTRUCT {<br/>
     ?u foaf:searched_word ?w .<br/>
     ?u foaf:song_listened ?s.<br/>
     ?s foaf:song_contains ?w .<br/>
-
-
 } WHERE { <br/>
     {?se foaf:search_contains ?w .<br/>
-    ?s foaf:song_contains ?w.<br/>
+    ?s foaf:song_contains ?w .<br/>
     ?u foaf:searched ?se .<br/>
     ?s rdf:type ?Song .<br/>
     ?u rdf:type ?User .<br/>
     ?w rdf:type ?Word .<br/>
-    ?se foaf:id "824".}<br/>
-} 
+    ?se foaf:id "824" .}<br/>
+}
+
 #### Query 2:
 SELECT DISTINCT ?a <br/>
 WHERE { <br/>
-?u foaf:song_listened ?s . <br/>
-    ?s foaf:song_contains ?a. <br/> 
-    ?se foaf:search_contains ?b.<br/>
-    ?a rdf:type ?Word.<br/>
-    ?b rdf:type ?Word.<br/>
+?u foaf:song_listened ?s .<br/>
+    ?s foaf:song_contains ?a .<br/> 
+    ?se foaf:search_contains ?b .<br/>
+    ?a rdf:type ?Word .<br/>
+    ?b rdf:type ?Word .<br/>
     ?s rdf:type ?Song .<br/>
     ?u rdf:type ?User .<br/>
-    ?se rdf:type ?Search.<br/>
-    ?a foaf:value ?x.<br/>
-    ?b foaf:value ?y.<br/>
-        FILTER(?x=?y).     <br/>
-} 
+    ?se rdf:type ?Search .<br/>
+    ?a foaf:value ?x .<br/>
+    ?b foaf:value ?y .<br/>
+        FILTER(?x=?y) .<br/>
+}
+
 #### Description:
 For the last competency question we wanted to answer, whether users are searching for lyrics they listened to. To answer this we selected two queries. Query one looks up all songs (their lyrics) that are connected to a single search. In our case we selected search number 824 containing the words "Go" and "Sky". It shows all songs that are have either words "Go" or "Sky" in their lyrics aswell as those, that contain both. <br/><br/>
 The second Query is another approach where we look up which words that are contained in the lyrics have been searched by a user. 614 words from song lyrics have also been searched by the user. None of the queries puts an emphasis on the sentiment. We did not find a reasonable way to analyse whether the user actually searched for the lyrics to find a song or if the overlap as a mere coincidence. In general, all queries were processed very fast except the second query of this task, which took around 15 minutes.
