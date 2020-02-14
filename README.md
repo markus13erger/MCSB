@@ -18,4 +18,5 @@
   - file (the filepath of the "MCSB" RDF file)
   - query (which query you want to use, either "song" or "time")
   - artist (for which artist you want to query)
+ 
  With the "-h" argument there are more details shown concerning the mandatory arguments. 
