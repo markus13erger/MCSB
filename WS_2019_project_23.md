@@ -150,10 +150,10 @@ This query returns all the words a user has searched for. In this case it just r
 ### 5. Are the users searching for songs they listened to? (Berger)
 
 #### Query:
-Select DISTINCT ?s<br/>
-where { <br/>
+SELECT DISTINCT ?s<br/>
+WHERE { <br/>
     {<br/>
-	?u foaf:song_listened ?s .<br/>
+    ?u foaf:song_listened ?s .<br/>
     ?s rdf:type ?Song .<br/>
     ?u rdf:type ?User .<br/>
     ?w rdf:type ?Word.<br/>
@@ -172,13 +172,13 @@ This Query looks up all unique songs that the user searched for. In total, there
 ### 6. Are the users searching for lyrics they listened to? (Sieder)
 
 #### Query 1:
-construct {<br/>
+CONSTRUCT {<br/>
     ?u foaf:searched_word ?w .<br/>
     ?u foaf:song_listened ?s.<br/>
     ?s foaf:song_contains ?w .<br/>
 
 
-}where { <br/>
+} WHERE { <br/>
     {?se foaf:search_contains ?w .<br/>
     ?s foaf:song_contains ?w.<br/>
     ?u foaf:searched ?se .<br/>
@@ -188,8 +188,8 @@ construct {<br/>
     ?se foaf:id "824".}<br/>
 } 
 #### Query 2:
-Select DISTINCT ?a <br/>
-where { <br/>
+SELECT DISTINCT ?a <br/>
+WHERE { <br/>
 ?u foaf:song_listened ?s . <br/>
     ?s foaf:song_contains ?a. <br/> 
     ?se foaf:search_contains ?b.<br/>
