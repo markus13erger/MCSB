@@ -81,7 +81,7 @@ We used Graph DB as a triple store just as proposed. We had to adjust our RDF en
 
 ## Task 6: Develop a set of SPARQL queries to answer the competency questions
 
-### 1. Who is the artist of a specific song?
+### 1. Who is the artist of a specific song? (Berger)
 
 #### Query:
 
@@ -99,7 +99,7 @@ Construct {<br/>
 This query returns the artist of a specific song (Dancing Queen in this case). It is also worth mentioning that there are song title which were used multiple times and are therefore performed by multiple artists.
 
 
-### 2. Who is the most listened artist by a user?
+### 2. Who is the most listened artist by a user? (Sieder)
 
 #### Query:
 select DISTINCT ?time ?name where {<br/>
@@ -116,7 +116,7 @@ select DISTINCT ?time ?name where {<br/>
 This query returns the milliseconds played of any artist and orders them by descending order. Therefore, the number one entry is the most listened artist of a user.
 
 
-### 3. What are the lyrics of a specific song?
+### 3. What are the lyrics of a specific song? (Berger)
 
 #### Query:
 construct {<br/>
@@ -133,7 +133,7 @@ construct {<br/>
 This query returns all the words used in a specific song (in this case once again Dancing Queen).
 
 
-### 4. What are the users searching for?
+### 4. What are the users searching for? (Sieder)
 
 #### Query:
 construct {<br/>
@@ -147,7 +147,7 @@ construct {<br/>
 #### Description:
 This query returns all the words a user has searched for. In this case it just returns everything for the user Markus since this is the only user in our data.
 
-### 5. Are the users searching for songs they listened to?
+### 5. Are the users searching for songs they listened to? (Berger)
 
 #### Query:
 Select DISTINCT ?s<br/>
@@ -169,9 +169,9 @@ where { <br/>
 #### Description:
 This Query looks up all unique songs that the user searched for. In total, there are only 13 songs that the user also searched for on google. In our case it is only possible to check one word as a time which results in troubles if the song title contains more than one word (for example "Dancing Queen"). This is a problem resulting from our song titles, since we chose to use song titles separated with a "+" (e.g. "Dancing+Queen"), where we could have introduced a new variable for title that links back to our rdf:Word. This is something we did not consider but is an important aspect for future projects.
 
-### 6. Are the users searching for lyrics they listened to?
+### 6. Are the users searching for lyrics they listened to? (Sieder)
 
-#### Query:
+#### Query 1:
 construct {<br/>
     ?u foaf:searched_word ?w .<br/>
     ?u foaf:song_listened ?s.<br/>
@@ -187,6 +187,21 @@ construct {<br/>
     ?w rdf:type ?Word .<br/>
     ?se foaf:id "824".}<br/>
 } 
-
+#### Query 2:
+Select DISTINCT ?a <br/>
+where { <br/>
+?u foaf:song_listened ?s . <br/>
+    ?s foaf:song_contains ?a. <br/> 
+    ?se foaf:search_contains ?b.<br/>
+    ?a rdf:type ?Word.<br/>
+    ?b rdf:type ?Word.<br/>
+    ?s rdf:type ?Song .<br/>
+    ?u rdf:type ?User .<br/>
+    ?se rdf:type ?Search.<br/>
+    ?a foaf:value ?x.<br/>
+    ?b foaf:value ?y.<br/>
+        FILTER(?x=?y).     <br/>
+} 
 #### Description:
-This query is designed to look up, whether a user searched for the lyrics of a song. It will not be checked how many words of the lyrics are being searched as long as searched words are contained in the lyrics. The query shows all connections between searched words and lyrics. In this specific case we restrict ourselves to search 824 (containing the words "Go" and "Sky") as the output becomes quite uniterpretable for all searches.
+For the last competency question we wanted to answer, whether users are searching for lyrics they listened to. To answer this we selected two queries. Query one looks up all songs (their lyrics) that are connected to a single search. In our case we selected search number 824 containing the words "Go" and "Sky". It shows all songs that are have either words "Go" or "Sky" in their lyrics aswell as those, that contain both. <br/><br/>
+The second Query is another approach where we look up which words that are contained in the lyrics have been searched by a user. 614 words from song lyrics have also been searched by the user. None of the queries puts an emphasis on the sentiment. We did not find a reasonable way to analyse whether the user actually searched for the lyrics to find a song or if the overlap as a mere coincidence
