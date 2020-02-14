@@ -150,24 +150,24 @@ This query returns all the words a user has searched for. In this case it just r
 ### 5. Are the users searching for songs they listened to?
 
 #### Query:
-construct {<br/>
-    ?u foaf:searched_word ?w .<br/>
-    ?u foaf:song_listened ?s.<br/>
-    ?s foaf:song_contains ?w .<br/>
-    
-
-}where { <br/>
-    {?se foaf:search_contains ?w .<br/>
-    ?s foaf:song_contains ?w.<br/>
-    ?u foaf:searched ?se .<br/>
+Select DISTINCT ?s<br/>
+where { <br/>
+    {<br/>
+	?u foaf:song_listened ?s .<br/>
     ?s rdf:type ?Song .<br/>
     ?u rdf:type ?User .<br/>
-    ?w rdf:type ?Word .<br/>
-    ?w foaf:value "Berlin".}<br/>
+    ?w rdf:type ?Word.<br/>
+    ?se rdf:type ?Search.<br/>
+    ?se foaf:search_contains ?w .<br/>
+    ?s foaf:title ?x.<br/>
+    ?w foaf:value ?y.<br/>
+        FILTER(?x=?y).    <br/>    
+
+   }<br/>        
 } 
 
 #### Description:
-This query is designed to check, whether a user has searched for a specific song which is assumed he listened to. If a song is asked that the user neither listened to nor searched it will return nothing. In this case we made a specific lookup for "Berlin", which is a song the user listened to and a term he searched for.
+This Query puts out all unique songs that the user searched for. In total, there are only 13 songs that the user also searched for on google. In our case it is only possible to check one word as a time which results in troubles if the song title contains more than one word (for example "Dancing Queen"). This is a problem resulting from our song titles, since we chose to use song titles separated with a "+" (e.g. "Dancing+Queen"), where we could have introduced a new variable for title that links back to our rdf:Word. This is something we did not consider but is an important aspect for future projects.
 
 ### 6. Are the users searching for lyrics they listened to?
 
